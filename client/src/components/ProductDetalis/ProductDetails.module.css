@@ -1,0 +1,128 @@
+.url {
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 800;
+  margin-top: 35px;
+  margin-bottom: 60px;
+}
+
+.articleDetalies {
+  display: flex;
+  margin: 0 auto;
+  width: 1110px;
+  height: 450px;
+}
+
+.imgProduct {
+  width: 670px;
+}
+
+.productDescription {
+  padding-left: 25px;
+}
+
+.name {
+  text-align: center;
+  width: 415px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #4a4a4d;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.collection {
+  text-align: center;
+  width: 415px;
+  font-size: 45px;
+  font-weight: 500;
+  color: #1d1d20;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.price {
+  text-align: center;
+  width: 415px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #4a4a4d;
+  margin-top: 25px;
+  margin-bottom: 0px;
+}
+
+.textDescription {
+  text-align: center;
+  width: 415px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #4a4a4d;
+  margin-top: 25px;
+  border-bottom: 1px solid silver;
+  padding-bottom: 20px;
+  margin-bottom: 0px;
+}
+
+.addProduct {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+}
+
+.inputCounter {
+  width: 50px;
+  height: 35px;
+  color: #7d7d7d;
+  background-color: #eeeeee;
+  margin: 0;
+  text-align: center;
+  padding-top: 19px;
+}
+
+.counterButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonIncrement {
+  width: 26px;
+  height: 26px;
+  background-color: #dadada;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #7d7d7d;
+  outline-color: silver;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+.buttonDecrement {
+  width: 26px;
+  height: 26px;
+  background-color: #dadada;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #7d7d7d;
+  outline-color: silver;
+  margin-left: 2px;
+}
+
+.buttonAddCart {
+  margin-left: 12px;
+  width: 145px;
+  height: 55px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  background-color: #1d1d20;
+  cursor: pointer;
+}
