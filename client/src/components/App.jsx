@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Navigation from './Navigation/Navigation';
 import Loader from './Loader';
+import CartPopup from './CartPopup/CartPopup';
 
 const AsyncCategoryPage = Loadable({
   loader: () =>
@@ -10,17 +11,19 @@ const AsyncCategoryPage = Loadable({
   loading: Loader,
 });
 
-const AsyncProductDetalisPage = Loadable({
+const AsyncProductDetailsPage = Loadable({
   loader: () =>
     import(
-      '../pages/ProductDetalisPage' /* webpackChunkName: "product-detalis-page" */
+      '../pages/ProductDetailsPage' /* webpackChunkName: "product-details-page" */
     ),
   loading: Loader,
 });
 
 const AsyncShoppingCartPage = Loadable({
   loader: () =>
-    import('../pages/ShoppingCartPage' /* webpackChunkName: "cart-page" */),
+    import(
+      '../pages/ShoppingCartPage/ShoppingCartPage' /* webpackChunkName: "cart-page" */
+    ),
   loading: Loader,
 });
 
@@ -37,10 +40,11 @@ const App = () => (
     <Navigation />
     <Switch>
       <Route path="/" exact component={AsyncCategoryPage} />
-      <Route path="/product/:productId" component={AsyncProductDetalisPage} />
+      <Route path="/product/:productId" component={AsyncProductDetailsPage} />
       <Route path="/cart" component={AsyncShoppingCartPage} />
       <Route component={AsyncNotFoundPage} />
     </Switch>
+    {false && <CartPopup />}
   </div>
 );
 

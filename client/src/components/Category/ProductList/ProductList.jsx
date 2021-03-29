@@ -11,7 +11,7 @@ const ProductList = () => {
             <img className={styles.imgProduct} src={plates} alt="product" />
             <div className={styles.blocks}>
               <div className={styles.iconsWrapperWide}>
-                <p className={styles.textIcon}>VIEW DETALIS</p>
+                <p className={styles.textIcon}>VIEW DETAILS</p>
               </div>
               <div className={styles.iconsWrapperWide}>
                 <p className={styles.textIcon}>ADD TO CART</p>

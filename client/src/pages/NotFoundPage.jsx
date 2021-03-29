@@ -1,7 +1,14 @@
 import React from 'react';
 
-const NotFoundPage = () => (
-  <h1 className="text-primary">Sorry, page not found</h1>
-);
+const NotFoundPage = () => {
+  const Style = {
+    fontFamily: 'Roboto',
+    fontWeight: 700,
+    textAlign: 'center',
+    color: '#1d1d20',
+  };
+
+  return <h1 style={Style}>Sorry, page not found</h1>;
+};
 
 export default NotFoundPage;

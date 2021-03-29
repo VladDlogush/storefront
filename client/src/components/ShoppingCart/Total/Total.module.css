@@ -1,0 +1,74 @@
+.totalCheck {
+  display: flex;
+  width: 785px;
+  height: 110px;
+  margin-top: 32px;
+  margin-left: 80px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.totalName {
+  margin-right: 110px;
+  margin-left: 490px;
+}
+
+.cartOverview {
+  margin-top: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 14px;
+  width: 106px;
+}
+
+.price {
+  margin-top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 14px;
+}
+.priceCAD {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #1d1d20;
+  font-size: 14px;
+  width: 74px;
+}
+
+.footerCheck {
+  width: 785px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.buttonContinue {
+  font-family: 'Roboto', sans-serif;
+  color: #1d1d20;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  width: 141px;
+  height: 20px;
+  margin-top: 35px;
+}
+
+.buttonContinue:hover {
+  border-bottom: 1px solid #a4a4b6;
+}
+
+.buttonCheckout {
+  font-family: 'Roboto', sans-serif;
+  width: 195px;
+  height: 55px;
+  cursor: pointer;
+  background-color: #1d1d20;
+  color: white;
+  border: none;
+  margin-left: 449px;
+  margin-top: 30px;
+}

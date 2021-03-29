@@ -1,0 +1,174 @@
+.namePosition {
+  width: 785px;
+  height: 50px;
+  display: flex;
+  padding-top: 70px;
+  border-bottom: 1px solid #e4e4e4;
+  margin-left: 80px;
+}
+
+.product {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.quantity {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-right: 60px;
+  margin-left: 425px;
+}
+
+.total {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 15px;
+  margin-top: 0px;
+  margin-right: 60px;
+}
+
+.action {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+.blocks {
+  list-style-type: none;
+}
+
+.checkProduct {
+  width: 785px;
+  height: 150px;
+  margin-top: 32px;
+  margin-left: 40px;
+  border-bottom: 1px solid #e4e4e4;
+}
+
+.display {
+  display: flex;
+}
+
+.imgProduct {
+  width: 125px;
+  height: 80px;
+  margin-right: 15px;
+}
+
+.descriptionProduct {
+  margin-right: 105px;
+}
+
+.name {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 14px;
+}
+
+.collection {
+  margin-top: 10px;
+  margin-bottom: 0;
+  width: 247px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #1d1d20;
+  font-size: 14px;
+}
+
+.color {
+  margin-top: 15px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 14px;
+}
+
+.addProduct {
+  display: flex;
+  justify-content: center;
+}
+
+.counter {
+  display: flex;
+}
+
+.inputCounter {
+  width: 50px;
+  height: 35px;
+  color: #7d7d7d;
+  background-color: #eeeeee;
+  margin: 0;
+  text-align: center;
+  padding-top: 19px;
+}
+
+.counterButtons {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonIncrement {
+  width: 26px;
+  height: 26px;
+  background-color: #dadada;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #7d7d7d;
+  outline-color: silver;
+  margin-left: 2px;
+  margin-bottom: 2px;
+}
+
+.buttonDecrement {
+  width: 26px;
+  height: 26px;
+  background-color: #dadada;
+  border: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #7d7d7d;
+  outline-color: silver;
+  margin-left: 2px;
+}
+
+.totalNumber {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: #a4a4b6;
+  font-size: 14px;
+  margin-left: 55px;
+  margin-right: 85px;
+  margin-top: 0;
+}
+
+.cancelButton {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  width: 26px;
+  height: 26px;
+}
+
+.cancelImg {
+  width: 26px;
+  height: 26px;
+  opacity: 100;
+  color: #a4a4b6;
+}

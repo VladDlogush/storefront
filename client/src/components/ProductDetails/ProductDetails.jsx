@@ -3,11 +3,11 @@ import product from '../../img/mashiko-yaki-green-small-plate.jpg';
 import styles from './ProductDetails.module.css';
 
 // eslint-disable-next-line react/prop-types
-const ProductDetalis = ({ match }) => {
+const ProductDetails = ({ match }) => {
   return (
-    <div>
+    <div className={styles.padding}>
       <p className={styles.url}>HOME / PLATES / {match.params.productId}</p>
-      <article className={styles.articleDetalies}>
+      <article className={styles.articleDetails}>
         <img className={styles.imgProduct} src={product} alt="product" />
         <div className={styles.productDescription}>
           <p className={styles.name}>Kiriko</p>
@@ -41,6 +41,6 @@ const ProductDetalis = ({ match }) => {
   );
 };
 
-export default ProductDetalis;
+export default ProductDetails;
 
 // сделать адаптивность

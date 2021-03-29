@@ -1,0 +1,21 @@
+.background {
+  background-color: #f6f6f6;
+  padding-bottom: 50px;
+}
+
+.titleCart {
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  padding-top: 95px;
+  margin-top: 0;
+  margin-bottom: 60px;
+}
+
+.articleCart {
+  width: 945px;
+  height: 740px;
+  background-color: #ffffff;
+  margin: 0 auto;
+  border-radius: 5px;
+}

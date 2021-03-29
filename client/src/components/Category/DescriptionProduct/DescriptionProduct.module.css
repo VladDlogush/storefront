@@ -9,10 +9,10 @@
 
 .description {
   position: absolute;
-  height: 314px;
+  height: 310px;
   width: 710px;
   background-color: #393935;
-  top: 215px;
+  top: 217px;
   left: 50%;
   transform: translate(-50%, -50%);
 }
