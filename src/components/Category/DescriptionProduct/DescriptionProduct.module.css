@@ -1,0 +1,40 @@
+/* body {
+  overflow: scroll;
+} */
+
+.div {
+  display: flex;
+}
+
+.platesHeader {
+  max-width: 1304px;
+  min-width: 100px;
+  height: 310px;
+}
+
+.description {
+  position: absolute;
+  height: 271px;
+  width: 55%;
+  background-color: #393935;
+  top: 217px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+}
+
+.title {
+  color: white;
+  text-align: center;
+  border-bottom: 1px solid white;
+  width: 90px;
+  height: 48px;
+  margin: 0 auto;
+  margin-top: 88px;
+}
+.description {
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}

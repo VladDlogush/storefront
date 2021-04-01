@@ -1,0 +1,165 @@
+/* body {
+  overflow: hidden;
+} */
+
+.bcg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.div {
+  width: 520px;
+  height: 454px;
+  border: 1px solid #9f9f9f;
+  background-color: white;
+  border-radius: 3px;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+}
+.productList {
+  margin-top: 0;
+  overflow-y: auto;
+  height: 300px;
+}
+
+.item {
+  width: 469px;
+  height: 110px;
+  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: -16px;
+}
+
+.imgProduct {
+  width: 198px;
+  height: 110px;
+}
+
+.description {
+  margin-left: 15px;
+}
+
+.collection {
+  margin-top: 2px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #3c3c3e;
+  width: 234px;
+}
+
+.count {
+  margin-top: 10px;
+  margin-left: 6px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #3c3c3e;
+  font-size: 12px;
+}
+
+.name {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #9f9f9f;
+}
+
+.price {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  color: #3c3c3e;
+}
+
+.cancelButton {
+  margin-left: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  width: 14px;
+  height: 14px;
+}
+
+.cancelImg {
+  width: 14px;
+  height: 14px;
+  opacity: 100;
+  color: #a4a4b6;
+}
+
+.divTotal {
+  margin-top: 20px;
+  border-top: 1px solid silver;
+  width: 475px;
+  margin-left: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.total {
+  margin-bottom: 0px;
+  font-family: 'Roboto', sans-serif;
+  color: #9f9f9f;
+}
+
+.check {
+  margin-bottom: 0px;
+  font-family: 'Roboto', sans-serif;
+  color: #9f9f9f;
+}
+
+.divButtons {
+  margin-top: 20px;
+  width: 475px;
+  margin-left: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.view {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-color: #1d1d20;
+  border: none;
+  cursor: pointer;
+  width: 205px;
+  height: 60px;
+}
+
+.view:hover {
+  border: 1px solid #1d1d20;
+  background-color: #ffffff;
+  color: #1d1d20;
+  transition-duration: 0.4s;
+}
+
+.checkout {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background-color: #1d1d20;
+  border: none;
+  cursor: pointer;
+  width: 205px;
+  height: 60px;
+}
+
+.checkout:hover {
+  border: 1px solid #1d1d20;
+  background-color: #ffffff;
+  color: #1d1d20;
+  transition-duration: 0.4s;
+}

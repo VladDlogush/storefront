@@ -1,0 +1,84 @@
+.block {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -40px;
+}
+
+.positionPhoto {
+  margin: 30px;
+}
+
+.featuresListItem {
+  position: relative;
+  margin-bottom: -4px;
+  width: 330px;
+  height: 329px;
+}
+
+.imgProduct {
+  width: 330px;
+  height: 220px;
+}
+
+.featuresListItem:hover .blocks {
+  display: block;
+}
+
+.blocks {
+  position: absolute;
+  left: 45px;
+  bottom: 0;
+  right: 0;
+  top: 35px;
+  height: 145px;
+  width: 234px;
+  padding: 5px;
+  display: none;
+}
+
+.iconsWrapperWide {
+  padding-left: 50px;
+  background: #4a4a4d;
+  margin-bottom: 40px;
+}
+
+.textIcon {
+  width: 234px;
+  margin-left: -50px;
+  cursor: pointer;
+  background: #4a4a4d;
+  outline: none;
+  border: none;
+  line-height: 50px;
+  height: 50px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+}
+
+.textIcon:hover {
+  background: #323232;
+}
+
+.name {
+  font-family: 'Roboto';
+  color: #4a4a4d;
+  text-align: center;
+}
+
+.collection {
+  font-family: 'Roboto';
+  color: black;
+  text-align: center;
+}
+
+.price {
+  font-family: 'Roboto';
+  color: #4a4a4d;
+  text-align: center;
+}
+
+/* @media (min-width: 768px) {} */
+/* @media (min-width: 1200px) {} */
