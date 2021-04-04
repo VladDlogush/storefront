@@ -6,6 +6,7 @@ import styles from './Total.module.css';
 
 const Total = () => {
   const total = useSelector(state => getTotalSelector(state));
+
   return (
     <>
       <div className={styles.totalCheck}>

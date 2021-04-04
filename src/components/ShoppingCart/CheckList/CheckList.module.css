@@ -1,10 +1,10 @@
 .namePosition {
-  width: 785px;
+  width: 629px;
   height: 50px;
   display: flex;
   padding-top: 70px;
   border-bottom: 1px solid #e4e4e4;
-  margin-left: 80px;
+  margin-left: 55px;
 }
 
 .product {
@@ -22,7 +22,7 @@
   font-size: 15px;
   margin-top: 0px;
   margin-right: 60px;
-  margin-left: 425px;
+  margin-left: 282px;
 }
 
 .total {
@@ -31,7 +31,7 @@
   color: #a4a4b6;
   font-size: 15px;
   margin-top: 0px;
-  margin-right: 60px;
+  margin-right: 33px;
 }
 
 .action {
@@ -45,12 +45,12 @@
 .blocks {
   list-style-type: none;
   overflow-y: auto;
-  height: 300px;
+  height: 366px;
   margin-right: 50px;
 }
 
 .checkProduct {
-  width: 785px;
+  width: 588px;
   height: 150px;
   margin-top: 32px;
   margin-left: 40px;
@@ -68,7 +68,7 @@
 }
 
 .descriptionProduct {
-  margin-right: 105px;
+  margin-right: -59px;
 }
 
 .name {
@@ -156,7 +156,7 @@
   color: #a4a4b6;
   font-size: 14px;
   margin-left: 55px;
-  margin-right: 85px;
+  margin-right: 40px;
   margin-top: 0;
 }
 
@@ -174,4 +174,31 @@
   height: 26px;
   opacity: 100;
   color: #a4a4b6;
+}
+
+@media (min-width: 1200px) {
+  .namePosition {
+    width: 785px;
+    margin-left: 80px;
+  }
+
+  .quantity {
+    margin-left: 425px;
+  }
+
+  .total {
+    margin-right: 60px;
+  }
+
+  .checkProduct {
+    width: 785px;
+  }
+
+  .descriptionProduct {
+    margin-right: 105px;
+  }
+
+  .totalNumber {
+    margin-right: 85px;
+  }
 }

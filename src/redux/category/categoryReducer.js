@@ -1,4 +1,4 @@
-import { ActionProducts } from './categoryActions';
+import TypesProducts from './categoryTypes';
 
 const initialState = {
   productList: [],
@@ -7,12 +7,12 @@ const initialState = {
 
 const categoryReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case ActionProducts.GET_PRODUCTS_SUCCESS:
+    case TypesProducts.GET_PRODUCTS_SUCCESS:
       return {
         ...state,
         productList: payload,
       };
-    case ActionProducts.GET_PRODUCTS_FAILURE:
+    case TypesProducts.GET_PRODUCTS_FAILURE:
       return {
         ...state,
         error: payload,

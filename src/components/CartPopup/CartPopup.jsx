@@ -1,3 +1,5 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import React, { useEffect, createRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,51 +8,38 @@ import cancelIcon from '../../img/cancel.png';
 import {
   getCartPopupListSelector,
   getTotalSelector,
-  // getCountOrderProductSelector,
 } from '../../redux/selectors';
-
-import {
-  deleteItemList,
-  setOpenModal,
-  // setCountProducts,
-} from '../../redux/cartPopup/cartPopupActions';
+import { closePopup } from '../../redux/popup/popupActions';
+import { deleteProductOperation } from '../../redux/cart/cartOperations';
 
 const CartPopup = () => {
   const dispatch = useDispatch();
-
   const cartPopupList = useSelector(state => getCartPopupListSelector(state));
   const total = useSelector(state => getTotalSelector(state));
-  // const countOrderProduct = useSelector(state => getCountOrderProductSelector(state));
+  const backdropRef = createRef();
 
-  const deleteCartItem = id => {
-    dispatch(deleteItemList(id));
-    // dispatch(setCountProducts(cartPopupList.length));
-  };
-
-  const handleKeyPress = e => {
-    if (e.code !== 'Escape') return;
-
-    dispatch(setOpenModal(false));
-  };
+  const closeCart = () => dispatch(closePopup('cart'));
+  const deleteCartItem = id => dispatch(deleteProductOperation(id));
 
   useEffect(() => {
+    const handleKeyPress = e => {
+      if (e.code !== 'Escape') return;
+
+      closeCart();
+    };
+
     window.addEventListener('keydown', handleKeyPress);
-  }, []);
-
-  useEffect(() => {
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
   }, []);
-
-  const backdropRef = createRef();
 
   const handleBackdropClick = e => {
     const { current } = backdropRef;
 
     if (current && e.target !== current) return;
 
-    dispatch(setOpenModal(false));
+    closeCart();
   };
 
   return (
@@ -64,32 +53,34 @@ const CartPopup = () => {
       <div className={styles.div}>
         <ul className={styles.productList}>
           {cartPopupList &&
-            cartPopupList.map(product => (
-              <li className={styles.item} key={product.id}>
-                <img
-                  className={styles.imgProduct}
-                  src={product.image}
-                  alt="product"
-                />
-                <div className={styles.description}>
-                  <p className={styles.collection}>{product.title}</p>
-                  <p className={styles.count}>x {product.quantity}</p>
-                  <p className={styles.name}>{product.brand}</p>
-                  <p className={styles.price}>${product.price}.00</p>
-                </div>
-                <button
-                  className={styles.cancelButton}
-                  type="button"
-                  onClick={() => deleteCartItem(product.id)}
-                >
+            cartPopupList.map(
+              ({ id, image, title, quantity, brand, price }) => (
+                <li className={styles.item} key={id}>
                   <img
-                    className={styles.cancelImg}
-                    src={cancelIcon}
-                    alt="cancel icon"
+                    className={styles.imgProduct}
+                    src={require(`../../img/${image}`)}
+                    alt={title}
                   />
-                </button>
-              </li>
-            ))}
+                  <div className={styles.description}>
+                    <p className={styles.collection}>{title}</p>
+                    <p className={styles.count}>x {quantity}</p>
+                    <p className={styles.name}>{brand}</p>
+                    <p className={styles.price}>${price * quantity}.00</p>
+                  </div>
+                  <button
+                    className={styles.cancelButton}
+                    type="button"
+                    onClick={() => deleteCartItem(id)}
+                  >
+                    <img
+                      className={styles.cancelImg}
+                      src={cancelIcon}
+                      alt="cancel icon"
+                    />
+                  </button>
+                </li>
+              ),
+            )}
         </ul>
         <div className={styles.divTotal}>
           <p className={styles.total}>TOTAL</p>
@@ -97,7 +88,7 @@ const CartPopup = () => {
         </div>
         <div className={styles.divButtons}>
           <Link style={{ textDecoration: 'none' }} to="/cart">
-            <button className={styles.view} type="button">
+            <button className={styles.view} type="button" onClick={closeCart}>
               VIEW CART
             </button>
           </Link>

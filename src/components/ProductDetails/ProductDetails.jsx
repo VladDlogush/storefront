@@ -1,24 +1,38 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProductsSelector } from '../../redux/selectors';
-import { getProductsSelectorOperation } from '../../redux/category/categoryOperations';
+import { getProductsOperation } from '../../redux/category/categoryOperations';
+import { addProductToCartOperation } from '../../redux/cart/cartOperations';
 import styles from './ProductDetails.module.css';
 
-// eslint-disable-next-line react/prop-types
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const [currentProduct, setCurrentProduct] = useState(null);
+  const [productCount, setProductCount] = useState(0);
 
   const productList = useSelector(state => getProductsSelector(state));
 
   useEffect(() => {
-    dispatch(getProductsSelectorOperation());
+    dispatch(getProductsOperation());
     const { productId } = match.params;
 
     const value = productList.find(p => p.title === productId);
 
     setCurrentProduct(value);
   }, []);
+
+  const addProductToCart = () => {
+    const newProduct = {
+      ...currentProduct,
+      quantity: productCount,
+    };
+
+    dispatch(addProductToCartOperation(newProduct, 'details'));
+    setProductCount(0);
+  };
 
   return (
     <div className={styles.padding}>
@@ -27,8 +41,8 @@ const ProductDetails = ({ match }) => {
         <article className={styles.articleDetails}>
           <img
             className={styles.imgProduct}
-            src={currentProduct.image}
-            alt="product"
+            src={require(`../../img/${currentProduct.image}`)}
+            alt={currentProduct.title}
           />
           <div className={styles.productDescription}>
             <p className={styles.name}>{currentProduct.brand}</p>
@@ -39,17 +53,30 @@ const ProductDetails = ({ match }) => {
             </p>
             <div className={styles.addProduct}>
               <div className={styles.counter}>
-                <p className={styles.inputCounter}>{currentProduct.quantity}</p>
+                <p className={styles.inputCounter}>{productCount}</p>
                 <div className={styles.counterButtons}>
-                  <button className={styles.buttonIncrement} type="button">
+                  <button
+                    onClick={() => setProductCount(productCount + 1)}
+                    className={styles.buttonIncrement}
+                    type="button"
+                  >
                     +
                   </button>
-                  <button className={styles.buttonDecrement} type="button">
+                  <button
+                    disabled={productCount === 1}
+                    onClick={() => setProductCount(productCount - 1)}
+                    className={styles.buttonDecrement}
+                    type="button"
+                  >
                     -
                   </button>
                 </div>
               </div>
-              <button className={styles.buttonAddCart} type="button">
+              <button
+                onClick={addProductToCart}
+                className={styles.buttonAddCart}
+                type="button"
+              >
                 ADD TO CART
               </button>
             </div>
@@ -60,4 +87,14 @@ const ProductDetails = ({ match }) => {
   );
 };
 
+ProductDetails.defaultProps = {
+  match: {},
+};
+
+ProductDetails.propTypes = {
+  match: PropTypes.objectOf(PropTypes.any),
+};
+
 export default ProductDetails;
+
+// возможно деструктиризация

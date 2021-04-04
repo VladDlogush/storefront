@@ -6,6 +6,10 @@
   border-bottom: 1px solid silver;
 }
 
+.activeLink {
+  color: aqua;
+}
+
 .linkHome:hover {
   border-bottom: 1px solid #1d1d20;
   transition-duration: 0.5s;

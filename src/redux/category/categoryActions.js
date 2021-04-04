@@ -1,14 +1,11 @@
-export const ActionProducts = {
-  GET_PRODUCTS_SUCCESS: 'GET_PRODUCTS_SUCCESS',
-  GET_PRODUCTS_FAILURE: 'GET_PRODUCTS_FAILURE',
-};
+import TypesProducts from './categoryTypes';
 
-export const getProductsSelectorSuccess = payload => ({
-  type: ActionProducts.GET_PRODUCTS_SUCCESS,
+export const getProductsSuccess = payload => ({
+  type: TypesProducts.GET_PRODUCTS_SUCCESS,
   payload,
 });
 
-export const getProductsSelectorFailure = payload => ({
-  type: ActionProducts.GET_PRODUCTS_FAILURE,
+export const getProductsFailure = payload => ({
+  type: TypesProducts.GET_PRODUCTS_FAILURE,
   payload,
 });

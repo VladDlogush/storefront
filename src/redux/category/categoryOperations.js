@@ -1,16 +1,13 @@
 import http from '../../REST/http';
 
-import {
-  getProductsSelectorSuccess,
-  getProductsSelectorFailure,
-} from './categoryActions';
+import { getProductsSuccess, getProductsFailure } from './categoryActions';
 
 // eslint-disable-next-line import/prefer-default-export
-export const getProductsSelectorOperation = () => dispatch => {
+export const getProductsOperation = () => dispatch => {
   http
-    .getProductsSelector()
+    .getProducts()
     .then(({ data }) => {
-      dispatch(getProductsSelectorSuccess(data));
+      dispatch(getProductsSuccess(data));
     })
-    .catch(error => dispatch(getProductsSelectorFailure(error)));
+    .catch(error => dispatch(getProductsFailure(error)));
 };

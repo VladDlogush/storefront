@@ -1,6 +1,6 @@
 .totalCheck {
   display: flex;
-  width: 785px;
+  width: 600px;
   height: 110px;
   margin-top: 32px;
   margin-left: 80px;
@@ -9,7 +9,7 @@
 
 .totalName {
   margin-right: 110px;
-  margin-left: 490px;
+  margin-left: 300px;
 }
 
 .cartOverview {
@@ -33,11 +33,11 @@
   font-weight: 500;
   color: #1d1d20;
   font-size: 14px;
-  width: 74px;
+  width: 82px;
 }
 
 .footerCheck {
-  width: 785px;
+  width: 575px;
   display: flex;
   margin: 0 auto;
 }
@@ -69,6 +69,24 @@
   background-color: #1d1d20;
   color: white;
   border: none;
-  margin-left: 449px;
+  margin-left: 239px;
   margin-top: 30px;
+}
+
+@media (min-width: 1200px) {
+  .totalCheck {
+    width: 785px;
+  }
+
+  .totalName {
+    margin-left: 490px;
+  }
+
+  .footerCheck {
+    width: 785px;
+  }
+
+  .buttonCheckout {
+    margin-left: 449px;
+  }
 }
