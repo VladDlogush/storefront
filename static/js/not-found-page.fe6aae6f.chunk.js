@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{94:function(n,t,o){"use strict";o.r(t);var e=o(0),r=o.n(e);t.default=function(){return r.a.createElement("h1",{style:{fontFamily:"Roboto",fontWeight:700,textAlign:"center",color:"#1d1d20"}},"Sorry, page not found")}}}]);
+//# sourceMappingURL=not-found-page.fe6aae6f.chunk.js.map
