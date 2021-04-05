@@ -31,7 +31,7 @@
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
     "lint:format": "prettier src/**/*.{js,css,json} --write",
-    "predeploy": "yarn build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -65,5 +65,5 @@
       "jest-junit"
     ]
   },
-  "homepage": ""
+  "homepage": "https://github.com/VladDlogush/storefront"
 }
