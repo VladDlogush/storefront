@@ -11,7 +11,7 @@ import styles from './ProductDetails.module.css';
 const ProductDetails = ({ match }) => {
   const dispatch = useDispatch();
   const [currentProduct, setCurrentProduct] = useState(null);
-  const [productCount, setProductCount] = useState(0);
+  const [productCount, setProductCount] = useState(1);
 
   const productList = useSelector(state => getProductsSelector(state));
 
@@ -31,7 +31,7 @@ const ProductDetails = ({ match }) => {
     };
 
     dispatch(addProductToCartOperation(newProduct, 'details'));
-    setProductCount(0);
+    setProductCount(1);
   };
 
   return (
@@ -96,5 +96,3 @@ ProductDetails.propTypes = {
 };
 
 export default ProductDetails;
-
-// возможно деструктиризация

@@ -15,6 +15,7 @@ import {
   deleteFromCart,
   addDetailstProduct,
   addProduct,
+  checkingForAnEmptyArray,
 } from '../utils';
 
 // get
@@ -71,7 +72,9 @@ export const deleteProductOperation = id => (dispatch, getState) => {
   http
     .putCart(updatedCart)
     .then(({ data }) => {
-      dispatch(deleteItemListSuccess(data));
+      checkingForAnEmptyArray(data);
+      const newData = checkingForAnEmptyArray(data);
+      dispatch(deleteItemListSuccess(newData));
     })
     .catch(error => dispatch(deleteItemListFailure(error)));
 };

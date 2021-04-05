@@ -1,4 +1,4 @@
-export const updateProductInCart = (cartList, id, action) => {
+export const updateProductInCart = (cartList, id, action, item) => {
   const product = cartList.find(({ id: itemId }) => itemId === id);
 
   switch (action) {
@@ -6,14 +6,16 @@ export const updateProductInCart = (cartList, id, action) => {
       return { ...product, quantity: product.quantity + 1 };
     case 'decrement':
       return { ...product, quantity: product.quantity - 1 };
+    case 'details-increment':
+      return { ...product, quantity: item.quantity };
 
     default:
       return product;
   }
 };
 
-export const updateCartList = (cartList, id, action) => {
-  const updatedProduct = updateProductInCart(cartList, id, action);
+export const updateCartList = (cartList, id, action = 'increment', item) => {
+  const updatedProduct = updateProductInCart(cartList, id, action, item);
 
   return cartList.reduce((acc, current) => {
     // eslint-disable-next-line no-unused-expressions
@@ -32,11 +34,9 @@ export const updateCart = (cart, id, action) => {
 
   switch (action) {
     case 'increment':
-      // eslint-disable-next-line no-return-assign
       return {
         ...cart,
-        // eslint-disable-next-line no-param-reassign
-        countProducts: (cart.countProducts += 1),
+        countProducts: cart.countProducts + 1,
         total: cart.total + productInCart.price,
         cartList: updatedCartList,
       };
@@ -58,26 +58,21 @@ export const deleteFromCart = (cart, id) => {
 
   const { price, quantity } = cartList.find(({ id: itemId }) => itemId === id);
 
-  return {
+  const newCart = {
     ...cart,
     cartList: cart.cartList.filter(item => item.id !== id),
     countProducts: cart.countProducts - quantity,
     total: cart.total - price * quantity,
   };
+
+  return newCart;
 };
 
 export const addProduct = (cart, product) => {
   const { cartList } = cart;
 
-  // узнать почему не работает isProductInCart,
-  // если очистить полностю cartList и добавлять снова продукти(строка 76)
-
-  // находит продукт в cartList или undefined
   const isProductInCart = cartList.find(item => item.id === product.id);
 
-  console.log('isProductInCart: ', isProductInCart);
-
-  // если продукт есть добавляеть +1 или возращает продукт
   const newItem = isProductInCart
     ? {
         ...isProductInCart,
@@ -85,37 +80,19 @@ export const addProduct = (cart, product) => {
       }
     : product;
 
-  console.log('newItem: ', newItem);
-
-  // если продукт есть добавляет к countProducts +1 и к total цену продукта
-
-  // !! нужно еще добавть newItem,
-  // если добавить так:
-  // [...cartList, newItem], то будут дублироватся продукти
-  // если добавить так:
-  // [newItem], то продукт будет перезаписовать весь cartList
-  // или посмотреть логику добавление в counter на странице Sopping Cart
-
-  // или
-  // если нет продукта добавляет новый продукт в cartList,
-  // в countProducts добавляет quantity нового продукта,
-  // в total добавляет price нового продукта,
-
   const newCart = isProductInCart
     ? {
         ...cart,
-        cartList: [newItem],
+        cartList: updateCartList(cart.cartList, newItem.id),
         countProducts: cart.countProducts + 1,
         total: cart.total + newItem.price,
       }
     : {
         ...cart,
-        cartList: [...cartList, newItem],
+        cartList: [...cart.cartList, newItem],
         countProducts: cart.countProducts + newItem.quantity,
         total: cart.total + newItem.price,
       };
-
-  console.log('newCart: ', newCart);
 
   return newCart;
 };
@@ -135,18 +112,34 @@ export const addDetailstProduct = (cart, product) => {
       }
     : product;
 
+  const newList = updateCartList(
+    cart.cartList,
+    newItem.id,
+    'details-increment',
+    newItem,
+  );
+
   const newCart = isProductInCart
     ? {
         ...cart,
-        countProducts: newItem.quantity,
-        total: cart.total + newItem.price,
+        cartList: newList,
+        countProducts:
+          cart.countProducts + newItem.quantity - isProductInCart.quantity,
+        total: cart.total + product.price * product.quantity,
       }
     : {
         ...cart,
         cartList: [...cartList, newItem],
         countProducts: cart.countProducts + newItem.quantity,
-        total: cart.total + newItem.price,
+        total: cart.total + newItem.price * product.quantity,
       };
 
   return newCart;
+};
+
+export const checkingForAnEmptyArray = data => {
+  // eslint-disable-next-line no-prototype-builtins
+  const isLastProductInCart = data.hasOwnProperty('cartList');
+
+  return isLastProductInCart ? data : { ...data, cartList: [] };
 };

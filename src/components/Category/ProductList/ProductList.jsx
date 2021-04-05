@@ -79,6 +79,3 @@ ProductList.propTypes = {
 };
 
 export default ProductList;
-
-// сделать add to cart переиспользованной кнопкой
-// Деструктуризация

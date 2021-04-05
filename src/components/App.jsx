@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import { getProductsCartOperation } from '../redux/cart/cartOperations';
-import { getPopupStatusSelector } from '../redux/selectors';
 import Navigation from './Navigation/Navigation';
 import Loader from './Loader';
-import CartPopup from './CartPopup/CartPopup';
+import ProtectedRoute from './ProtectedRoute';
 
 const AsyncCategoryPage = Loadable({
   loader: () =>
@@ -40,7 +39,6 @@ const AsyncNotFoundPage = Loadable({
 
 const App = () => {
   const dispatch = useDispatch();
-  const isOpenPopup = useSelector(state => getPopupStatusSelector(state));
 
   useEffect(() => {
     dispatch(getProductsCartOperation());
@@ -50,15 +48,14 @@ const App = () => {
     <div>
       <Navigation />
       <Switch>
-        <Route path="/products" exact component={AsyncCategoryPage} />
-        <Route
+        <ProtectedRoute path="/products" exact component={AsyncCategoryPage} />
+        <ProtectedRoute
           path="/products/:productId"
           component={AsyncProductDetailsPage}
         />
-        <Route path="/cart" component={AsyncShoppingCartPage} />
-        <Route component={AsyncNotFoundPage} />
+        <ProtectedRoute path="/cart" component={AsyncShoppingCartPage} />
+        <ProtectedRoute component={AsyncNotFoundPage} />
       </Switch>
-      {isOpenPopup && <CartPopup />}
     </div>
   );
 };

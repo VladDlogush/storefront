@@ -3,14 +3,20 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
 import logo from '../../img/logo.png';
+import CartPopup from '../CartPopup/CartPopup';
 import { openPopup } from '../../redux/popup/popupActions';
-import { getCartProductsCountSelector } from '../../redux/selectors';
+import {
+  getCartProductsCountSelector,
+  getPopupStatusSelector,
+} from '../../redux/selectors';
 
 const Navigation = () => {
   const dispatch = useDispatch();
   const countProducts = useSelector(state =>
     getCartProductsCountSelector(state),
   );
+
+  const isOpenPopup = useSelector(state => getPopupStatusSelector(state));
 
   const openCart = () => dispatch(openPopup('cart'));
 
@@ -61,6 +67,7 @@ const Navigation = () => {
       <button type="button" className={styles.buttonCart} onClick={openCart}>
         MY CART ({countProducts})
       </button>
+      {isOpenPopup && <CartPopup />}
     </nav>
   );
 };
