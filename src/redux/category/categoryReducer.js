@@ -1,6 +1,6 @@
 import TypesProducts from './categoryTypes';
 
-const initialState = {
+export const initialState = {
   productList: [],
   error: '',
 };

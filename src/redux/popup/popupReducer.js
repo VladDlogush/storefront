@@ -1,11 +1,11 @@
 import TypesPopup from './popupTypes';
 
-const initialState = {
+export const initialState = {
   status: false,
   type: '',
 };
 
-const categoryReducer = (state = initialState, { type, payload }) => {
+const popupReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case TypesPopup.OPEN_POPUP:
     case TypesPopup.CLOSE_POPUP:
@@ -16,4 +16,4 @@ const categoryReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export default categoryReducer;
+export default popupReducer;

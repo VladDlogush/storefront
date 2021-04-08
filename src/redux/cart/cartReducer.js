@@ -1,6 +1,6 @@
 import TypesCart from './cartTypes';
 
-const initialState = {
+export const initialState = {
   cartList: [],
   total: 0,
   countProducts: 0,
