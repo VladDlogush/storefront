@@ -2,8 +2,12 @@ import { openPopup, closePopup } from '../../popup/popupActions';
 import TypesPopup from '../../popup/popupTypes';
 
 describe('redux popup test', () => {
+  let type;
+
+  beforeEach(() => {
+    type = 'cart';
+  });
   it('openPopup', () => {
-    const type = 'cart';
     const result = {
       type: TypesPopup.OPEN_POPUP,
       payload: { status: true, type },
@@ -11,7 +15,6 @@ describe('redux popup test', () => {
     expect(openPopup(type)).toEqual(result);
   });
   it('closePopup', () => {
-    const type = 'cart';
     const result = {
       type: TypesPopup.CLOSE_POPUP,
       payload: { status: false, type },

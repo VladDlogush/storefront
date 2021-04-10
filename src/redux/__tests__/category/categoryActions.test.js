@@ -5,8 +5,12 @@ import {
 import TypesProducts from '../../category/categoryTypes';
 
 describe('redux category test', () => {
+  let payload;
+
+  beforeEach(() => {
+    payload = {};
+  });
   it('getProductsSuccess', () => {
-    const payload = {};
     const result = {
       type: TypesProducts.GET_PRODUCTS_SUCCESS,
       payload,
@@ -15,7 +19,6 @@ describe('redux category test', () => {
   });
 
   it('getProductsFailure', () => {
-    const payload = {};
     const result = {
       type: TypesProducts.GET_PRODUCTS_FAILURE,
       payload,

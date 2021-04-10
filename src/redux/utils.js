@@ -98,8 +98,6 @@ export const addProduct = (cart, product) => {
 };
 
 export const addDetailstProduct = (cart, product) => {
-  console.log(cart);
-  console.log(product);
   const { cartList } = cart;
 
   const isProductInCart = cartList.find(

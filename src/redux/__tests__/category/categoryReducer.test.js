@@ -5,8 +5,12 @@ import {
 } from '../../category/categoryActions';
 
 describe('categoryReducer tests', () => {
+  let payload;
+
+  beforeEach(() => {
+    payload = {};
+  });
   it('getProductsSuccess should set productList to store', () => {
-    const payload = {};
     const action = getProductsSuccess({});
     const newState = {
       ...initialState,
@@ -16,7 +20,6 @@ describe('categoryReducer tests', () => {
   });
 
   it('getProductsFailure should set error to store', () => {
-    const payload = {};
     const action = getProductsFailure(payload);
     const newState = {
       ...initialState,

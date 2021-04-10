@@ -12,8 +12,12 @@ import {
 import TypesCart from '../../cart/cartTypes';
 
 describe('redux cartActions test', () => {
+  let payload;
+
+  beforeEach(() => {
+    payload = {};
+  });
   it('getProductsCartSuccess', () => {
-    const payload = {};
     const result = {
       type: TypesCart.GET_PRODUCTS_CART_SUCCESS,
       payload,
@@ -22,7 +26,6 @@ describe('redux cartActions test', () => {
   });
 
   it('getProductsCartFailure', () => {
-    const payload = {};
     const result = {
       type: TypesCart.GET_PRODUCTS_CART_FAILURE,
       payload,
@@ -31,7 +34,6 @@ describe('redux cartActions test', () => {
   });
 
   it('setCartPopupSuccess', () => {
-    const payload = {};
     const result = {
       type: TypesCart.SET_CART_POPUP_SUCCESS,
       payload,
@@ -40,7 +42,6 @@ describe('redux cartActions test', () => {
   });
 
   it('setCartPopupFailure', () => {
-    const payload = {};
     const result = {
       type: TypesCart.SET_CART_POPUP_FAILURE,
       payload,
@@ -49,7 +50,6 @@ describe('redux cartActions test', () => {
   });
 
   it('updateCartPopupSuccess', () => {
-    const payload = {};
     const result = {
       type: TypesCart.UPDATE_CART_POPUP_SUCCESS,
       payload,
@@ -58,7 +58,6 @@ describe('redux cartActions test', () => {
   });
 
   it('updateCartPopupFailure', () => {
-    const payload = {};
     const result = {
       type: TypesCart.UPDATE_CART_POPUP_FAILURE,
       payload,
@@ -67,7 +66,6 @@ describe('redux cartActions test', () => {
   });
 
   it('deleteItemListSuccess', () => {
-    const payload = {};
     const result = {
       type: TypesCart.DELETE_ITEM_LIST_SUCCESS,
       payload,
@@ -76,7 +74,6 @@ describe('redux cartActions test', () => {
   });
 
   it('deleteItemListFailure', () => {
-    const payload = {};
     const result = {
       type: TypesCart.DELETE_ITEM_LIST_FAILURE,
       payload,
@@ -85,7 +82,6 @@ describe('redux cartActions test', () => {
   });
 
   it('setModalStatus', () => {
-    const payload = {};
     const result = {
       type: TypesCart.SET_MODAL_STATUS,
       payload,

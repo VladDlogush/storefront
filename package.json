@@ -32,7 +32,7 @@
     "lint:format": "prettier src/**/*.{js,css,json} --write",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "test": "jest --watchAll",
+    "test": "jest --verbose --watchAll ",
     "test-coverage": "jest --watchAll --coverage"
   },
   "eslintConfig": {
